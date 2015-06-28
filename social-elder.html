@@ -1,0 +1,175 @@
+<head>
+  <title>social-elder</title>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+</body>
+
+<template name="home">
+  {{> hero}}
+  {{> remote}}
+  {{> services}}
+  {{> dispatchers}}
+  {{> shop}}
+  {{> footer}}
+  {{> analytics}}
+</template>
+
+<template name="settings">
+  <div class="settings">
+    {{> nav}}
+    <div class="forms">
+      <h1> Settings page for {{name}}</h1>
+      <input type="text" value="{{name}}"/>
+      <input type="tel" value="{{phoneNumber}}"/>
+      <h3> Trusted Numbers </h3>
+      <ul class="trusted-numbers">
+        {{# each trustedNumbers}}
+          <li><input type="text" value="{{name}}"/><span><input type="tel" value="{{number}}"/></span> </li>
+        {{/ each}}
+      </ul>
+    </div>
+  </div>
+</template>
+
+<template name="request">
+  <div class="request">
+    {{> nav}}
+    <h1> {{userName}} with button number {{piNumber}} is requesting {{type}}. </h1>
+  </div>
+</template>
+
+<template name="nav">
+  <nav>
+    <div class="login">
+      {{> loginButtons align="right"}}
+    </div>
+    <a href="/" class="logo">
+      <img src="/imgs/wifi.svg"/>
+      <h1>Social<br>Elder</h1>
+    </a>
+  </nav>
+</template>
+
+<template name="hero">
+  {{> nav}}
+  <div class="hero">
+    <div class="mask"></div>
+    <h1>Modern care for seniors with the touch of a button.</h1>
+    <button class="button">Learn More...</button>
+  </div>
+</template>
+
+<template name="remote">
+  <section class="remote">
+    <div class="image">
+      <img src="/imgs/remote.svg"/>
+    </div>
+    <div class="info">
+      <h2> Easy to use remote control makes calling for help a breeze. </h2>
+      <p> Several types of help available without needing a computer. Our dispatchers will call to get to know you better, make your order, and find out about any specific help you may need.</p>
+      <div class="types">
+        <div class="food">
+          <a href="#food">
+            <img src="/imgs/chef-hat.svg"/>
+            <h4>Food delivery</h4>
+          </a>
+        </div>
+        <div class="help">
+          <a href="#help">
+            <img src="/imgs/forklift.svg"/>
+            <h4>General help</h4>
+          </a>
+        </div>
+        <div class="conversation">
+          <a href="#conversation">
+            <img src="/imgs/conversation.svg"/>
+            <h4>Conversation</h4>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<template name="services" class="item">
+  <section class="services">
+    {{#each service}}
+      {{> serviceItem}}
+    {{/each}}
+  </section>
+</template>
+
+<template name="serviceItem">
+  <div id="{{name}}" class="item" style="background:url({{background}});background-size: cover;background-position: center;">
+    {{#if disabled}}
+      <div class="disabled"></div>
+    {{/if}}
+    <div class="mask"></div>
+    <div class="img">
+      <img class="logo" src="{{logo}}"/>
+    </div>
+    <div class="text">
+      <h3> {{tagline}} </h3>
+      <p> Service provided by <a target="blank" href="{{attributionLink}}">{{attribution}}</a> </p>
+    </div>
+  </div>
+</template>
+
+<template name="dispatchers">
+  <section class="dispatchers">
+
+  </section>
+</template>
+
+<template name="shop">
+  <section class="shop">
+    <div class="left">
+      <img src="/imgs/remote.svg"/>
+      <h3> Purchase your remote </h3>
+    </div>
+    <div class="right">
+      <span class="price">$49.50</span>
+      <button class="button">Buy Now</button>
+      <p> Includes text messages and dispatcher services for one year.* </p>
+    </div>
+  </section>
+</template>
+
+<template name="footer">
+  <footer>
+    <div class="left">
+      Made 2015 for <a href="https://2015.battlehack.org/" target="_blank">#BattleHack</a>
+    </div>
+    <div class="center">
+
+    </div>
+    <div class="right">
+      Designed by <a href="http://teampixl.com/" target="blank">TeamPixl</a>
+    </div>
+    <div class="clearfix"></div>
+  </footer>
+</template>
+
+<template name="review">
+  <section class="review">
+  </section>
+</template>
+
+<template name="analytics">
+  <script type="text/javascript">
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '558fd248de2e267959004de3');
+    t.setAttribute('data-track-path', 'https://track.gaug.es/track.gif');
+    t.src = 'https://track.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+  </script>
+</template>

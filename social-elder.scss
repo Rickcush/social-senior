@@ -1,0 +1,361 @@
+/* CSS declarations go here */
+
+$blue: rgba(52, 158, 250, 1);
+$red: rgba(255, 75, 79, 1);
+$green: rgba(76, 149, 98, 1);
+$yellow: hsla(46, 100%, 63%, 1);
+
+
+@font-face{
+  font-family: KlinicSlab;
+  src: url(/fonts/klinic-slab/KlinicSlabLight.otf);
+  font-weight: 300;
+}
+@font-face{
+  font-family: KlinicSlab;
+  src: url(/fonts/klinic-slab/KlinicSlabBook.otf);
+  font-weight: 400;
+}
+@font-face{
+  font-family: KlinicSlab;
+  src: url(/fonts/klinic-slab/KlinicSlabBold.otf);
+  font-weight: 800;
+}
+
+body{
+  margin: 0;
+  font-family: KlinicSlab, sans-serif;
+}
+
+.button{
+  background: transparent;
+  border: 2px solid black;
+  border-radius: 30px;
+
+  letter-spacing: 0.5px;
+  font-size: 22px;
+  padding: 10px 30px 8px;
+  font-family: KlinicSlab, sans-serif;
+  font-weight: 400;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.15s;
+
+  &:hover{
+    border: 2px solid $blue;
+  }
+}
+nav{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 96%;
+  z-index: 1000;
+  padding: 2%;
+  background: transparent;
+  img{
+    display: inline-block;
+    height: 58px;
+    margin-right: 8px;
+  }
+  h1{
+    display: inline-block;
+    color: white;
+    margin: 0;
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    letter-spacing: 0.5px;
+    line-height: 105%;
+  }
+  .login{
+    display: inline-block;
+    font-size: 16px;
+    color: white;
+    float: right;
+  }
+}
+
+$hero-margin: 5% 2%;
+.hero{
+  height: 100vh;
+  background: url(/imgs/hero.jpg);
+  background-size: cover;
+  background-position: bottom;
+  color: white;
+  position: relative;
+
+  h1{
+    position: absolute;
+    bottom: 0;
+    margin: $hero-margin;
+    font-size: 52px;
+    font-weight: 300;
+    width: 550px;
+    color: white;
+  }
+  button{
+    position: absolute;
+    bottom: 2%;
+    right: 1%;
+    margin: $hero-margin;
+    color: white;
+    border: 2px solid white;
+  }
+  .mask{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.5;
+  }
+}
+
+.remote{
+  padding: 100px 0;
+
+  .image{
+    width: 45%;
+    display: inline-block;
+    vertical-align: middle;
+    img{
+      width: 80%;
+      display: block;
+      margin: 0 auto;
+      max-height: 250px;
+    }
+  }
+  .info{
+    width: 50%;
+    display: inline-block;
+    vertical-align: middle;
+
+    h2{
+      font-size: 40px;
+      font-weight: 400;
+      margin: 0;
+      margin-bottom: 5px;
+      max-width: 80%;
+    }
+    p{
+      font-size: 20px;
+      font-family: Lato, sans-serif;
+      font-weight: 300;
+      max-width: 80%;
+      line-height: 150%;
+      margin: 0;
+      margin-bottom: 25px;
+    }
+
+    .types{ // container
+      width: 100%;
+      padding-top: 10px;
+      div{
+        width: 30%;
+        text-align: center;
+        display: inline-block;
+      }
+      a{
+        text-decoration: none;
+        color: black;
+      }
+      h4{
+        font-size: 22px;
+        text-decoration: none;
+        transition: all 0.2s;
+        &:hover{
+          color: $blue;
+        }
+      }
+    }
+  }
+}
+
+$service-item-border: 3px solid #222;
+.services{
+  border-top: $service-item-border;
+  border-bottom: $service-item-border;
+
+  .item{
+    position: relative;
+    border-top: $service-item-border;
+    border-bottom: $service-item-border;
+    padding: 5% 0;
+    height: 500px;
+    background: linear-gradient(to bottom, #222, #333);
+
+
+    &:last-of-type{
+    }
+
+    .img{
+      width: 30%;
+      display: inline-block;
+      vertical-align: top;
+      height: 100%;
+      z-index: 1000;
+      position: relative;
+
+      img{
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    .text{
+      width: 62%;
+      position: relative;
+      display: inline-block;
+      vertical-align: bottom;
+      margin-left: 3%;
+      color: white;
+      z-index: 1000;
+
+      h3{
+        font-size: 48px;
+        line-height: 100%;
+        letter-spacing: 1px;
+        margin: 0;
+        font-weight: 300;
+      }
+      p{
+        font-size: 22px;
+        margin: 0;
+        margin-top: 10px;
+        font-family: Lato, sans-serif;
+        font-weight: 300;
+      }
+      a{
+        color: $yellow;
+        font-weight: 400;
+        text-decoration: none;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+    .mask{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      opacity: 0.5;
+      z-index: 200;
+    }
+  }
+}
+.shop{
+  padding: 200px 0;
+  .left{
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+    h3{
+      font-size: 26px;
+      letter-spacing: 0.1px;
+    }
+  }
+  .right{
+    width: 49%;
+    display: inline-block;
+    span{
+      font-size: 100px;
+      color: $blue;
+      font-weight: 300;
+      margin-right: 15px;
+    }
+    .button:hover{
+      border: 2px solid $yellow;
+    }
+    p{
+      margin: 0;
+    }
+  }
+}
+
+footer{
+  background: $green;
+  color: white;
+
+  a{
+    color: white;
+    text-decoration: none;
+    transform: all 0.2s;
+    font-weight: 800;
+    &:hover{
+      color: $yellow;
+      border-bottom: 1px solid $yellow;
+    }
+  }
+
+  .left{
+    width: 30%;
+    padding: 5%;
+    float: left;
+  }
+  .right{
+    float: right;
+    padding: 5%;
+  }
+  .clearfix{
+    clear: both;
+  }
+}
+
+.request{
+  nav{
+    position: relative;
+    background: $blue;
+  }
+}
+.settings{
+  nav{
+    position: relative;
+    background: $green;
+  }
+
+  .forms{
+    padding: 5%;
+
+    h1{
+      margin: 0;
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+    h3{
+      font-size: 24px;
+    }
+    input{
+      display: block;
+      width: 30%;
+      border: none;
+      padding: 10px;
+      background: #eee;
+      margin-bottom: 10px;
+      outline: none;
+      border-radius: 2px;
+      font-size: 14px;
+    }
+    .trusted-numbers{
+      input{
+        width: 20%;
+        margin-right: 10px;
+        display: inline-block;
+      }
+      span input{
+        width: 25%;
+        display: inline-block;
+      }
+    }
+    ul{
+      padding: 0;
+    }
+    li{
+      margin-bottom: 2px;
+    }
+  }
+}
