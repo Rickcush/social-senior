@@ -1,6 +1,7 @@
 Router.route('/', function(){
   this.render('home');
 });
+
 Router.route('/settings', function(){
   this.render('settings',{
     data: {
@@ -63,7 +64,7 @@ if (Meteor.isClient) {
     Accounts.onLogin(function(){
       console.log(Meteor.user());
       // redirect to settings on login
-      window.location.href = "./settings";
+      //window.location.href = "./settings";
     });
   });
 
